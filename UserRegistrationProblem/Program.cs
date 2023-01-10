@@ -18,7 +18,6 @@
             //Mobile Number
             registrationValidate.ValidateMobileNum();
             //PassWord
-            Console.WriteLine("Rule 1 : Minimum 8 Characters\n");
             registrationValidate.ValidatePassword();
 
 
