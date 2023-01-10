@@ -85,9 +85,9 @@ namespace UserRegistrationProblem
         public void ValidatePassword()
         {
             //UC5 & UC6
-            string passWordRegex = "^[A-Z]{1}[A-Za-z0-9]{7}$";
+            string passWordRegex = "^(?=.*?[A-Z])(?=.*?[0-9]).{8,}$";
             //Storing Email id in Array
-            string[] passWords = { "12345678", "87654321", "abcdefgh", "123456789", "00435435678","Password","PASS2023" };
+            string[] passWords = { "12345678", "87654321", "abcdefgh", "123456789", "00435435678","Password","PASS2023","Hhhhhhhhh","Hjkdhkd15" };
             //printing all email ids
             foreach (string password in passWords)
             {
