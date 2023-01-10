@@ -10,20 +10,36 @@ namespace UserRegistrationProblem
 {
     internal class RegistrationValidate
     {
-        public static string REGEX_FIRSTNAME = "^[A-Z][a-z]{2,}$";
-
-        public void ValidateFirstName(string name)
+        //First Name 
+        public void ValidateFirstName(string fName)
         {
             string firstnameregex = "^[A-Z]{1}[a-zA-Z]{2,}$";
             Regex regexfirst = new Regex(firstnameregex);
-            if (regexfirst.IsMatch(name))
+            if (regexfirst.IsMatch(fName))
             {
-                Console.WriteLine(name + " : Valid");
+                Console.WriteLine(fName + " : Valid");
             }
             else
             {
-                Console.WriteLine(name +" : Invalid");        
+                Console.WriteLine(fName +" : Invalid");
+                Console.WriteLine("--------------------");
             }
         }
+        //Last Name 
+        public void ValidateLastName(string lName)
+        {
+            string firstnameregex = "^[A-Z]{1}[a-zA-Z]{2,}$";
+            Regex regexfirst = new Regex(firstnameregex);
+            if (regexfirst.IsMatch(lName))
+            {
+                Console.WriteLine(lName + " : Valid");
+            }
+            else
+            {
+                Console.WriteLine(lName + " : Invalid");
+                Console.WriteLine("--------------------");
+            }
+        }
+
     }
 }
