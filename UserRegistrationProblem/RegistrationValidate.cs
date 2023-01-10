@@ -81,5 +81,27 @@ namespace UserRegistrationProblem
             }
             Console.WriteLine("--------------------------------");
         }
+        //Password
+        public void ValidatePassword()
+        {
+            //UC5 - Rule 1 - Min 8 Character
+            string passWordRegex = "^[A-Za-z0-9]{8}$";
+            //Storing Email id in Array
+            string[] passWords = { "12345678", "87654321", "abcdefgh", "123456789", "00435435678" };
+            //printing all email ids
+            foreach (string password in passWords)
+            {
+                if (Regex.IsMatch(password, passWordRegex)) //True or False
+                {
+                    Console.WriteLine(password + ": Valid");
+                }
+                else
+                {
+                    Console.WriteLine(password + " : Invalid");
+                }
+
+            }
+            Console.WriteLine("--------------------------------");
+        }
     }
 }
