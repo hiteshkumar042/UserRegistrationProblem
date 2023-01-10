@@ -15,6 +15,8 @@
             registrationValidate.ValidateLastName("kumar");
             //Email Id
             registrationValidate.ValidateEmailId();
+            //Mobile Number
+            registrationValidate.ValidateMobileNum();
 
 
         }

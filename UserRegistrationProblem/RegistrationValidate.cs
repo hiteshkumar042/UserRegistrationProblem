@@ -59,5 +59,27 @@ namespace UserRegistrationProblem
             }
             Console.WriteLine("--------------------------------");
         }
+        //Mobile Number
+        public void ValidateMobileNum()
+        {
+            //Pattern for email Id
+            string mobileNumRegex = "^91[ ]*[6-9]{1}[0-9]{9}$";
+            //Storing Email id in Array
+            string[] mobileNums = {"918875208042","91 8875208042","232232244","34543fre34","00435435678" };
+            //printing all email ids
+            foreach (string mNums in mobileNums)
+            {
+                if (Regex.IsMatch(mNums, mobileNumRegex)) //True or False
+                {
+                    Console.WriteLine(mNums + ": Valid");
+                }
+                else
+                {
+                    Console.WriteLine(mNums + " : Invalid");
+                }
+
+            }
+            Console.WriteLine("--------------------------------");
+        }
     }
 }
