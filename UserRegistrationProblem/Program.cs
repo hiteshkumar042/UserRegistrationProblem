@@ -19,6 +19,8 @@
             registrationValidate.ValidateMobileNum();
             //PassWord
             registrationValidate.ValidatePassword();
+            //All Email 
+            registrationValidate.AllEmailId();
 
 
         }

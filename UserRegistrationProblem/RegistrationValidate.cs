@@ -103,5 +103,31 @@ namespace UserRegistrationProblem
             }
             Console.WriteLine("--------------------------------");
         }
+        //UC-9 All Email Type
+        public void AllEmailId()
+        {
+            //Pattern for email Id
+            string emailIdRegex = "^[a-zA-Z0-9]+([.,-][A-Za-z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]+([.][a-zA-Z]+)?$";
+            //Storing Email id in Array
+            string[] allEmailIds = { "abc@yahoo.com","abc-100@yahoo.com","abc.100@yahoo.com","abc111@abc.com",
+                                    "abc-100@abc.net","abc.100@abc.com.au","abc@1.com","abc@gmail.com.com","abc+100@gmail.com",
+                                    "abc", "abc@.com.my","abc123@.com","abc123@.com.com",".abc@abc.com",
+                                    "abc()*@gmail.com","abc@%*.com","abc..2002@gmail.com","abc.@gmail.com",
+                                    "abc@abc@gmail.com","abc@gmail.com.1a","abc@gmail.com.aa.au"};
+            //printing all email ids
+            foreach (string id in allEmailIds)
+            {
+                if (Regex.IsMatch(id, emailIdRegex)) //True or False
+                {
+                    Console.WriteLine(id + " : Valid");
+                }
+                else
+                {
+                    Console.WriteLine(id + " : Invalid");
+                }
+
+            }
+            Console.WriteLine("--------------------------------");
+        }
     }
 }
