@@ -7,55 +7,65 @@ namespace UserRegistrationTesting
     {
         //Happy Test Cases(Test Cases Pass The Entries)
         [TestMethod]
-        public void GivenUserFistName_WhenValidate_ShouldReturnTrue()
+        [DataRow("Hitesh")]
+        [DataRow("Kumar")]
+        [DataRow("Solanki")]
+        public void GivenUserFistName_WhenValidate_ShouldReturnTrue(string firstName)
         {
             //Arrange
             RegistrationValidate registrationValidate = new RegistrationValidate();
-            string firstName = "Hitesh";
             //Act
             bool result = registrationValidate.ValidateFirstName(firstName);
             //Assert
             Assert.IsTrue(result);
         }
         [TestMethod]
-        public void GivenUserLastName_WhenValidate_ShouldReturnTrue()
+        [DataRow("Kumar")]
+        [DataRow("Gupta")]
+        [DataRow("Sharma")]
+        public void GivenUserLastName_WhenValidate_ShouldReturnTrue(string lastName)
         {
             //Arrange
             RegistrationValidate user = new RegistrationValidate();
-            string lastName = "Sayre";
             //Act
             bool result = user.ValidateFirstName(lastName);
             //Assert
             Assert.IsTrue(result);
         }
         [TestMethod]
-        public void GivenEmailId_WhenValidate_ShouldReturnTrue()
+        [DataRow("hiteshkumar794@gmail.com")]
+        [DataRow("hiteshkumar794.solanki@gmail.com")]
+        [DataRow("hitesh794@gmail.com")]
+        public void GivenEmailId_WhenValidate_ShouldReturnTrue(string email)
         {
             //Arrange
             RegistrationValidate user = new RegistrationValidate();
-            string email = "akshaysayre7@gmail.com";
             //Act
             bool result = user.ValidateEmail(email);
             //Assert
             Assert.IsTrue(result);
         }
         [TestMethod]
-        public void GivenMobileNumber_WhenValidate_ShouldReturnTrue()
+        [DataRow("918875208042")]
+        [DataRow("919321112345")]
+        [DataRow("918875208042")]
+        public void GivenMobileNumber_WhenValidate_ShouldReturnTrue(string mobNumber)
         {
             //Arrange
             RegistrationValidate user = new RegistrationValidate();
-            string mobileNumber = "91 7999837990";
             //Act
-            bool result = user.ValidateMobileNumber(mobileNumber);
+            bool result = user.ValidateMobileNumber(mobNumber);
             //Assert
             Assert.IsTrue(result);
         }
         [TestMethod]
-        public void GivenPassword_WhenValidate_ShouldReturnTrue()
+        [DataRow("Hitesh@123")]
+        [DataRow("Pass@123")]
+        [DataRow("Password@123")]
+        public void GivenPassword_WhenValidate_ShouldReturnTrue(string password)
         {
             //Arrange
             RegistrationValidate user = new RegistrationValidate();
-            string password = "Akshay@123";
             //Act
             bool result = user.ValidatePassword(password);
             //Assert
@@ -63,55 +73,66 @@ namespace UserRegistrationTesting
         }
         //(Test Cases Fail The Entry)
         [TestMethod]
-        public void GivenUserFistName_WhenValidate_ShouldReturnFalse()
+        [DataRow("hk")]
+        [DataRow("Rame$h")]
+        [DataRow("@ramesh")]
+        public void GivenUserFistName_WhenValidate_ShouldReturnFalse(string firstName)
         {
             //Arrange
             RegistrationValidate user = new RegistrationValidate();
-            string firstName = "akshay";
             //Act
             bool result = user.ValidateFirstName(firstName);
             //Assert
             Assert.IsFalse(result);
         }
         [TestMethod]
-        public void GivenUserLastName_WhenValidate_ShouldReturnFalse()
+        [DataRow("pk")]
+        [DataRow("$uthar")]
+        [DataRow("anjhan@")]
+        public void GivenUserLastName_WhenValidate_ShouldReturnFalse(string lastName)
         {
             //Arrange
             RegistrationValidate user = new RegistrationValidate();
-            string lastName = "sayre";
             //Act
             bool result = user.ValidateFirstName(lastName);
             //Assert
             Assert.IsFalse(result);
         }
         [TestMethod]
-        public void GivenEmailId_WhenValidate_ShouldReturnFalse()
+        [DataRow("pk@gm")]
+        [DataRow("hitesh@.com")]
+        [DataRow("sol@gmail")]
+        public void GivenEmailId_WhenValidate_ShouldReturnFalse(string email)
         {
             //Arrange
             RegistrationValidate user = new RegistrationValidate();
-            string email = "akshaysayregmail.com";
             //Act
             bool result = user.ValidateEmail(email);
             //Assert
             Assert.IsFalse(result);
         }
         [TestMethod]
-        public void GivenMobileNumber_WhenValidate_ShouldReturnFalse()
+        [DataRow("8875208042")]
+        [DataRow("93211 12345")]
+        [DataRow("875208042")]
+
+        public void GivenMobileNumber_WhenValidate_ShouldReturnFalse(string mobNumber)
         {
             //Arrange
             RegistrationValidate user = new RegistrationValidate();
-            string mobileNumber = "91 95876006";
             //Act
-            bool result = user.ValidateMobileNumber(mobileNumber);
+            bool result = user.ValidateMobileNumber(mobNumber);
             //Assert
             Assert.IsFalse(result);
         }
         [TestMethod]
-        public void GivenPassword_WhenValidate_ShouldReturnFalse()
+        [DataRow("Hite123")]
+        [DataRow("Pa12")]
+        [DataRow("asswr")]
+        public void GivenPassword_WhenValidate_ShouldReturnFalse(string password)
         {
             //Arrange
             RegistrationValidate user = new RegistrationValidate();
-            string password = "akshay@#123";
             //Act
             bool result = user.ValidatePassword(password);
             //Assert
